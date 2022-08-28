@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <script>
+        let student = [
+    {
+        fullname: 'นายตั้งใจ เรียนมาก',
+        age: 18,
+        year: 1,
+        gpa: 3.40,
+        help: true
+    },
+    {   
+        fullname: 'นายส่งงาน ตลอดมา',
+        age: 19,
+        year: 2,
+        gpa: 3.00,
+        help: false
+    },
+    {
+        fullname: 'นางสาวใส่ใจ ดีงาม',
+        age: 20,
+        year: 3,
+        gpa: 2.90,
+        help: true
+    },
+    {
+        fullname: 'นางสาวใส่ใจ ดีงาม',
+        age: 20,
+        year: 3,
+        gpa: 2.90,
+        help: true
+    },
+    {
+        fullname: 'นายประยุธ จันอังคาร',
+        age: 60,
+        year: 3,
+        gpa: 4.00,
+        help: false
+    },
+    {
+        fullname: 'นายประวิท นายกใหม่',
+        age: 21,
+        year: 3,
+        gpa: 1.70,
+        help: true
+    },
+    {
+        fullname: 'นางสาวปะรีนา ฟาร์มไก่',
+        age: 19,
+        year: 3,
+        gpa: 2.75,
+        help: true
+    },
+]
+
+for (let i in student){
+    if(student[i].gpa >= 3.20 && student[i].year >= 1){
+        if(student[i].help == true){
+            scholarship = 'ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย'
+            
+        }
+        else{
+            scholarship = 'ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์'
+            
+        }
+    }
+    else if(student[i].year >= 2 && student[i].help == true){
+        if(student[i].help == true && student[i].gpa >= 2.75){
+            scholarship = 'ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชา'
+            
+        }
+        else{
+            scholarship = 'ไม่ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์ แต่ช่วยงานภาควิชา'
+            
+        }
+    }else if (student[i].help == true && student[i].year == 1){
+        scholarship='ไม่ได้ทุนการศึกษา เนื่องจากปี 1 เกรดเฉลี่ยไม่ถึงเกณฑ์แต่ช่วยงานภาควิชา'
+        
+    }else{
+        scholarship = 'ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยนไม่ถึงเกณฑ์ และยังไม่ได้ช่วยงานภาควิชา'
+        
+    }
+
+    console.log(student[i].fullname+'เกิดเมื่อปี'+(2564-student[i].age)+''+scholarship)
+}
+    </script>
+</html>
